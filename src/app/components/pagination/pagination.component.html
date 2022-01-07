@@ -1,0 +1,15 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li (click)="previusRender()" class="page-item">
+      <a class="page-link" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li *ngFor="let i of render_pages" class="page-item"><a class="page-link" (click)="paginationEmit(i)">{{ i }}</a></li>
+    <li (click)="nextRender()" class="page-item">
+      <a class="page-link" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,25 @@
+<app-loader *ngIf="loader"></app-loader>
+<div class="w-100 animate__animated animate__backInUp" *ngIf="!loader">
+  <table class="table table-striped border">
+    <thead>
+      <tr>
+        <th scope="col">Clase</th>
+        <th scope="col">Departamento</th>
+        <th scope="col">Código</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let state of statesList.data | slice: start_slice:end_slice">
+        <th scope="row">{{ state.clase }}</th>
+        <td>{{ state.termino }}</td>
+        <td>{{ state.codigo }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="w-100 d-flex justify-content-center">
+    <app-pagination
+      [total_pages]="total_pages"
+      (pagination_emit)="handlePagination($event)"
+    ></app-pagination>
+  </div>
+</div>

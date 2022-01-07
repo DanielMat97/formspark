@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3">
+      <app-menu [statesList]="statesList"></app-menu>
+    </div>
+    <div class="col-9">
+      <app-list [statesList]="statesList" [loader]="loader" [total_pages]="total_pages"></app-list>
+    </div>
+  </div>
+</div>
