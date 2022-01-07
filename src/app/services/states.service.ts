@@ -23,15 +23,15 @@ export class StatesService {
   saveData(email: any, dpto: any, codigo: any){
     return new Promise((resolve, reject) => {
       if(email === 'serviciosweb@parquesnacionales.gov.co'){
-        resolve({
-          email,
-          dpto,
-          codigo
+        reject({
+          code: 401,
+          reason: "Este correo no esta valido, debe colocar el login"
         });
       }
-      reject({
-        code: 401,
-        reason: "Este correo no es valido"
+      resolve({
+        email,
+        dpto,
+        codigo
       });
     });
   }
